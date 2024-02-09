@@ -38,3 +38,42 @@ show(arr3)
 
 puts arr3.include? 4
 
+
+arr3.map! {|item| item.to_s * 2}
+show(arr3)
+puts arr3.count 
+
+arr3.push(100) << 200
+show(arr3)
+(arr3 << 300).push(400)
+show(arr3)
+p arr3.class
+
+=begin 
+conver every item into a int by mapping over it (! to save in place)
+then select only the even ints (! to save in place)
+=end
+arr3.map!{|item| item.to_i}.select!(&:even?)
+show(  arr3  )
+
+# drops the first two items and go from there
+arr3.drop(2).each do |num|
+    p num 
+end
+
+# remove the frist two and return the remainder
+arr3 = arr3.drop(2)
+
+show(arr3)
+
+def take_third arr, i
+    arr.each_with_index do |item, index| 
+        break item if index == i
+        # when the loop reachs the given index break the loop 
+        # and return the value
+    end
+end
+
+# you can stack one method and then another and list 
+# the arguments sepparated by commas with no parenthesis
+p take_third arr3, arr3.length - 1
