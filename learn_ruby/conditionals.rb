@@ -1,8 +1,6 @@
-a = 4
-if a%2 == 0
-    'if statement'
-elsif a%2 != 0 
-    'else if, optional'
-else 
-    'else, also optional'
-end
+warnings = ['Patronimic is missing', 'Address too short']
+
+puts "Some warnings occurred:\n#{warnings.join("\n")}" if !warnings.empty?
+# same, but better looking
+puts "Some warnings occurred:\n#{warnings.join("\n")}" unless warnings.empty?
+
