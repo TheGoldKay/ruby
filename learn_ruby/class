@@ -1,0 +1,54 @@
+#!/usr/share/rvm/rubies/ruby-3.0.0/bin/ruby
+
+class Greeter
+    def initialize(name = "World")
+        @name = name
+    end
+
+    def say_hi
+        puts "Hi #{@name}!"
+    end
+
+    def say_bye
+        puts "Bye #{@name}, come back soon."
+    end
+end
+
+# you can always open up the class definition to write extentions
+class Greeter 
+    attr_accessor :name 
+end
+
+greeter = Greeter.new("Alice")
+
+greeter.say_hi
+greeter.say_bye
+
+puts "My name is #{greeter.name}"
+
+greeter.name = "Monique"
+
+puts "My name now is #{greeter.name}"
+
+=begin
+3.0.0 :001 > cls = require './class.rb'
+ => true 
+3.0.0 :007 > greeter = Greeter.new("Jhonny")
+ => #<Greeter:0x000055be2d53bb00 @name="Jhonny"> 
+3.0.0 :008 > greeter.say_hi
+Hi Jhonny!
+ => nil 
+3.0.0 :009 > greeter.say_bye
+Bye Jhonny, come back soon.
+ => nil 
+3.0.0 :010 > 
+=end
+=begin
+3.0.0 :001 > require "./class.rb"
+ => true 
+3.0.0 :002 > greeter = Greeter.new("Alice")
+ => #<Greeter:0x0000560efb17c888 @name="Alice"> 
+3.0.0 :003 > greeter.name
+ => "Alice" 
+3.0.0 :004 > 
+=end
