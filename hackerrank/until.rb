@@ -16,7 +16,6 @@ class Person
         @time = 0
     end
 end
-check = 10
 person = Person.new()
 while not person.dead
     # do something to change dead
@@ -24,7 +23,7 @@ while not person.dead
     #puts check 
 end
 
-check = 100
+
 person.live
 until person.dead 
     # the same thing 
